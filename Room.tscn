@@ -59,7 +59,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_imku0"]
 material = SubResource("StandardMaterial3D_cdqbm")
 
-[node name="Node3D" type="Node3D"]
+[node name="Room" type="Node3D"]
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -245,17 +245,17 @@ transform = Transform3D(0.152369, 0, 0, 0, 2.29754, 0, 0, 0, 1, 0.219086, -0.639
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Window/StaticBody3D"]
 mesh = SubResource("BoxMesh_jsk3o")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Door" type="Node3D" parent="."]
 transform = Transform3D(1.79619, 0, 0, 0, 3.80825, 0, 0, 0, 0.0901375, -3.86439, 1.34636, 4.90601)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Door"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door/StaticBody3D"]
 mesh = SubResource("BoxMesh_6iypd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D"]
 shape = SubResource("BoxShape3D_tereu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door"]
 transform = Transform3D(0.0347166, 0, 0, 0, 0.0501597, 0, 0, 0, 0.155557, -0.453826, -0.055111, -0.459064)
 mesh = SubResource("BoxMesh_imku0")
