@@ -1,4 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://miurvv0mxmjx"]
+[gd_scene load_steps=24 format=3 uid="uid://miurvv0mxmjx"]
+
+[ext_resource type="PackedScene" uid="uid://b2b1lqvesug01" path="res://PlayerPrefab.tscn" id="1_gw2vq"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_4xowi"]
 
@@ -59,7 +61,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_imku0"]
 material = SubResource("StandardMaterial3D_cdqbm")
 
-[node name="Node3D" type="Node3D"]
+[node name="Room" type="Node3D"]
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -121,6 +123,17 @@ transform = Transform3D(1, -2.28152e-08, -2.28152e-08, -2.28152e-08, -4.37114e-0
 shape = SubResource("HeightMapShape3D_4xowi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/StaticBody3D3"]
+transform = Transform3D(0.484, -1.11857e-08, -1.10416e-08, -1.11857e-08, -0.00627625, -0.483959, 1.10416e-08, 0.483959, -0.00627626, 9.93186e-09, 0.435318, 0.48474)
+mesh = SubResource("PlaneMesh_a202f")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(2.38419e-07, 10.45, 0, 4.56784e-07, -1.04216e-14, -1.045, -10.45, 2.38419e-07, -4.56784e-08, -4.31111, 4.93589, -0.141002)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/StaticBody3D10"]
+transform = Transform3D(1, -2.28152e-08, -2.28152e-08, -2.28152e-08, -4.37114e-08, -1, 2.28152e-08, 1, -4.37114e-08, -0.0217446, 0.433014, 0.494573)
+shape = SubResource("HeightMapShape3D_4xowi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/StaticBody3D10"]
 transform = Transform3D(0.484, -1.11857e-08, -1.10416e-08, -1.11857e-08, -0.00627625, -0.483959, 1.10416e-08, 0.483959, -0.00627626, 9.93186e-09, 0.435318, 0.48474)
 mesh = SubResource("PlaneMesh_a202f")
 
@@ -245,17 +258,22 @@ transform = Transform3D(0.152369, 0, 0, 0, 2.29754, 0, 0, 0, 1, 0.219086, -0.639
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Window/StaticBody3D"]
 mesh = SubResource("BoxMesh_jsk3o")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Door" type="Node3D" parent="."]
 transform = Transform3D(1.79619, 0, 0, 0, 3.80825, 0, 0, 0, 0.0901375, -3.86439, 1.34636, 4.90601)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Door"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door/StaticBody3D"]
 mesh = SubResource("BoxMesh_6iypd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D"]
 shape = SubResource("BoxShape3D_tereu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door"]
 transform = Transform3D(0.0347166, 0, 0, 0, 0.0501597, 0, 0, 0, 0.155557, -0.453826, -0.055111, -0.459064)
 mesh = SubResource("BoxMesh_imku0")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_gw2vq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13349, 0)
+speed = 5
+jump_height = 2
