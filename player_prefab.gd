@@ -16,6 +16,7 @@ var jump
 var look_dir
 var move_dir
 var walk_vel:Vector3
+var interact
 
 func _physics_process(delta):
 	
@@ -31,6 +32,7 @@ func get_inputs():
 	left = Input.is_action_pressed("Move_Left")
 	right = Input.is_action_pressed("Move_Right")
 	jump = Input.is_action_pressed("Jump")
+	interact = Input.is_action_pressed("Interact")
 
 func _walk() :
 	move_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backwards")
