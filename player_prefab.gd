@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var mouse_sensitivity = 0.1
 @export_range(0.1, 3.0, 0.1, "or_greater") var camera_sens: float = 1
 @export_range(10, 400, 1) var acceleration: float = 100 # m/s^2
+@onready var neck := $neck
+@onready var camera:= $neck/Camera3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var forwards
 var backwards
@@ -15,14 +17,11 @@ var look_dir
 var move_dir
 var walk_vel:Vector3
 
-@export var camera:Camera3D
-
 func _physics_process(delta):
 	
 	velocity.y -= gravity * delta
-	velocity = _walk(delta)
+	_walk()
 	get_inputs()
-	do_movements()
 	move_and_slide()
 	
 
@@ -33,12 +32,16 @@ func get_inputs():
 	right = Input.is_action_pressed("Move_Right")
 	jump = Input.is_action_pressed("Jump")
 
-func _walk(delta: float) -> Vector3:
-	move_dir = Input.get_vector(&"Move_Left", &"Move_Right", &"Move_Forward", &"Move_Backwards")
-	var _forward: Vector3 = camera.global_transform.basis * Vector3(move_dir.x, 0, move_dir.y)
-	var walk_dir: Vector3 = Vector3(_forward.x, 0, _forward.z).normalized()
-	walk_vel = walk_vel.move_toward(walk_dir * speed * move_dir.length(), acceleration * delta)
-	return walk_vel
+func _walk() :
+	move_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backwards")
+	
+	var walk_dir = (neck.transform.basis * Vector3(move_dir.x,0,move_dir.y)).normalized()
+	if walk_dir:
+		velocity.x = walk_dir.x * speed
+		velocity.z = walk_dir.z*speed
+	else:
+		velocity.x = move_toward(velocity.x,0,speed)
+		velocity.z = move_toward(velocity.z,0,speed)
 
 	
 func do_movements():
@@ -68,7 +71,8 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		look_dir = event.relative * 0.01
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			camera.rotation.y -= look_dir.x * camera_sens * sens_mod
-			camera.rotation.x = clamp(camera.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+			neck.rotate_y(-event.relative.x*0.01)
+			camera.rotate_x(-event.relative.y*0.01)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30),deg_to_rad(60))
 				
 				
