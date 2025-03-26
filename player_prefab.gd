@@ -34,7 +34,8 @@ func get_inputs():
 
 func _walk() :
 	move_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backwards")
-	
+	if is_on_floor() && jump:
+		velocity.y = jump_height
 	var walk_dir = (neck.transform.basis * Vector3(move_dir.x,0,move_dir.y)).normalized()
 	if walk_dir:
 		velocity.x = walk_dir.x * speed
@@ -43,28 +44,9 @@ func _walk() :
 		velocity.x = move_toward(velocity.x,0,speed)
 		velocity.z = move_toward(velocity.z,0,speed)
 
-	
-func do_movements():
-	velocity.x=0
-	velocity.z=0
-	if is_on_floor() && jump:
-		velocity.y = jump_height
-	if forwards:
-		velocity.z -= speed
-	if backwards:
-		velocity.z += speed
-	if left:
-		velocity.x -= speed
-	if right:
-		velocity.x += speed
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-#func update_rotation():
-	#var mousePos:Vector2 = get_viewport().get_mouse_position()
-	#var from = camera.project_ray_origin(mousePos)
-	#var raylength = 1000
-	#var to = from + camera.project_ray_normal(mousePos) * raylength
 
 func _input(event):
 	var sens_mod = 1.0
