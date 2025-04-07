@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk04ycwedh7qa"]
+
+[ext_resource type="Script" uid="uid://1txen226bnkc" path="res://Interactable/Scripts/action_interactable.gd" id="1_rvhcl"]
+
+[node name="action_interactable" type="Node3D"]
+script = ExtResource("1_rvhcl")
+
+[node name="Area3D" type="Area3D" parent="."]

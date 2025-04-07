@@ -15,6 +15,11 @@ run/main_scene="res://Room.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*res://game.tscn"
+Hud="*res://hud.tscn"
+
 [dotnet]
 
 project/assembly_name="IndivEdTech"
