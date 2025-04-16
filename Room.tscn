@@ -1,6 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://miurvv0mxmjx"]
+[gd_scene load_steps=28 format=3 uid="uid://miurvv0mxmjx"]
 
-[ext_resource type="PackedScene" uid="uid://b2b1lqvesug01" path="res://PlayerPrefab.tscn" id="1_gw2vq"]
+[ext_resource type="PackedScene" uid="uid://dk04ycwedh7qa" path="res://Interactable/Prefab/interactable_prefab.tscn" id="2_5ruuo"]
+[ext_resource type="Script" uid="uid://1txen226bnkc" path="res://Interactable/Scripts/action_interactable.gd" id="3_61bxy"]
+[ext_resource type="PackedScene" uid="uid://552ixb33272g" path="res://Interactable/Manager/InteractableManager.tscn" id="3_u3qo1"]
+[ext_resource type="PackedScene" uid="uid://bqaxoejion0cq" path="res://Player/prefab/palyer_spawner.tscn" id="4_61bxy"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_4xowi"]
 
@@ -60,6 +63,8 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_imku0"]
 material = SubResource("StandardMaterial3D_cdqbm")
+
+[sub_resource type="SphereMesh" id="SphereMesh_u3qo1"]
 
 [node name="Room" type="Node3D"]
 
@@ -273,7 +278,15 @@ shape = SubResource("BoxShape3D_tereu")
 transform = Transform3D(0.0347166, 0, 0, 0, 0.0501597, 0, 0, 0, 0.155557, -0.453826, -0.055111, -0.459064)
 mesh = SubResource("BoxMesh_imku0")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_gw2vq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13349, 0)
-speed = 5
-jump_height = 2
+[node name="action_interactable" parent="." node_paths=PackedStringArray("manager") instance=ExtResource("2_5ruuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.561103, -1.6098)
+script = ExtResource("3_61bxy")
+manager = NodePath("../InteractableManager")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="action_interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0174054)
+mesh = SubResource("SphereMesh_u3qo1")
+
+[node name="InteractableManager" parent="." instance=ExtResource("3_u3qo1")]
+
+[node name="PalyerSpawner" parent="." instance=ExtResource("4_61bxy")]

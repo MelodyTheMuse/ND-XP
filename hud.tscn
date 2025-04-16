@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c0doack0a84el"]
+[gd_scene load_steps=2 format=3 uid="uid://c0doack0a84el"]
+
+[ext_resource type="Script" uid="uid://by6gwutoglquq" path="res://hud.gd" id="1_37p78"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -7,3 +9,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_37p78")
+
+[node name="Interact" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 302.0
+offset_top = 199.0
+offset_right = 792.0
+offset_bottom = 543.0
+scale = Vector2(0.800001, 0.24)
+
+[node name="Label" type="Label" parent="Interact"]
+layout_mode = 0
+offset_left = 136.25
+offset_top = 525.001
+offset_right = 276.25
+offset_bottom = 548.001
+scale = Vector2(3.19999, 8.00001)
+text = "Press F to interact"
