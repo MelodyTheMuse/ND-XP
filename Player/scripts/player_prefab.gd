@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export_range(10, 400, 1) var acceleration: float = 100 # m/s^2
 @onready var neck := $neck
 @onready var camera:= $neck/Camera3D
+signal interact_signal
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var forwards
 var backwards
@@ -24,6 +25,7 @@ func _physics_process(delta):
 	_walk()
 	get_inputs()
 	move_and_slide()
+	interacting()
 	
 
 func get_inputs():
@@ -48,7 +50,11 @@ func _walk() :
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	interact_signal.emit()
 
+func interacting():
+	if interact:
+		interact_signal.emit()
 
 func _input(event):
 	var sens_mod = 1.0
