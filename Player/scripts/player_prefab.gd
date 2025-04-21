@@ -61,7 +61,6 @@ func signal_emits():
 	if dialog:
 		dialog_signal.emit()
 
-
 func _input(event):
 	var sens_mod = 1.0
 	if event is InputEventMouseMotion:
@@ -70,5 +69,3 @@ func _input(event):
 			neck.rotate_y(-event.relative.x*0.01)
 			camera.rotate_x(-event.relative.y*0.01)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30),deg_to_rad(60))
-				
-				
