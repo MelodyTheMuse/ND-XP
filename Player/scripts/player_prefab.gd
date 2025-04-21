@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var neck := $neck
 @onready var camera:= $neck/Camera3D
 signal interact_signal
+signal dialog_signal
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var forwards
 var backwards
@@ -18,6 +19,7 @@ var look_dir
 var move_dir
 var walk_vel:Vector3
 var interact
+var dialog
 
 func _physics_process(delta):
 	
@@ -25,7 +27,7 @@ func _physics_process(delta):
 	_walk()
 	get_inputs()
 	move_and_slide()
-	interacting()
+	signal_emits()
 	
 
 func get_inputs():
@@ -35,6 +37,7 @@ func get_inputs():
 	right = Input.is_action_pressed("Move_Right")
 	jump = Input.is_action_pressed("Jump")
 	interact = Input.is_action_pressed("Interact")
+	dialog = Input.is_action_pressed("Dialog_skip")
 
 func _walk() :
 	move_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backwards")
@@ -52,9 +55,12 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	interact_signal.emit()
 
-func interacting():
+func signal_emits():
 	if interact:
 		interact_signal.emit()
+	if dialog:
+		dialog_signal.emit()
+
 
 func _input(event):
 	var sens_mod = 1.0

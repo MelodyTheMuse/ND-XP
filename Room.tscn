@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://miurvv0mxmjx"]
+[gd_scene load_steps=22 format=3 uid="uid://miurvv0mxmjx"]
 
 [ext_resource type="PackedScene" uid="uid://dk04ycwedh7qa" path="res://Interactable/Prefab/interactable_prefab.tscn" id="2_5ruuo"]
 [ext_resource type="Script" uid="uid://1txen226bnkc" path="res://Interactable/Scripts/action_interactable.gd" id="3_61bxy"]
 [ext_resource type="PackedScene" uid="uid://552ixb33272g" path="res://Interactable/Manager/InteractableManager.tscn" id="3_u3qo1"]
 [ext_resource type="PackedScene" uid="uid://bqaxoejion0cq" path="res://Player/prefab/palyer_spawner.tscn" id="4_61bxy"]
+[ext_resource type="Script" uid="uid://bsevjlaygmpxt" path="res://interviewer.gd" id="5_1loai"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_4xowi"]
 
@@ -18,34 +19,6 @@ albedo_color = Color(0.55, 0.393158, 0.2255, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a202f"]
 material = SubResource("StandardMaterial3D_a0tk4")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
-albedo_color = Color(0.886275, 0.505882, 0.117647, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_i5arm"]
-material = SubResource("StandardMaterial3D_jka67")
-
-[sub_resource type="BoxMesh" id="BoxMesh_wc5p8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsk3o"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_4arys"]
-material = SubResource("StandardMaterial3D_jsk3o")
-
-[sub_resource type="BoxMesh" id="BoxMesh_4xowi"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a202f"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
-albedo_color = Color(0.52, 0.0936, 0.0936, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_jka67"]
-material = SubResource("StandardMaterial3D_r3fl7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
 transparency = 1
@@ -65,6 +38,15 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_cdqbm")
 
 [sub_resource type="SphereMesh" id="SphereMesh_u3qo1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_61bxy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1loai"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgg63"]
+size = Vector3(2.05365, 0.822998, 0.671753)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vbd26"]
 
 [node name="Room" type="Node3D"]
 
@@ -187,71 +169,6 @@ mesh = SubResource("PlaneMesh_a202f")
 transform = Transform3D(0.484, -1.11857e-08, -1.10416e-08, -1.11857e-08, -0.00627625, -0.483959, 1.10416e-08, 0.483959, -0.00627626, 9.93186e-09, 0.435318, 0.48474)
 mesh = SubResource("PlaneMesh_a202f")
 
-[node name="TV" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00611901, 1.02348, -4.21784)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TV"]
-transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.3564, 0.00489723, -0.824581, -0.0293899)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D"]
-shape = SubResource("BoxShape3D_r3fl7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TV/StaticBody3D"]
-mesh = SubResource("BoxMesh_i5arm")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="TV"]
-transform = Transform3D(0.5, 0, 0, 0, 0.4, 0, 0, 0, 0.3, 0.00467539, -0.122805, -0.0161996)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D2"]
-shape = SubResource("BoxShape3D_r3fl7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TV/StaticBody3D2"]
-mesh = SubResource("BoxMesh_wc5p8")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="TV"]
-transform = Transform3D(0.35, 0, 0, 0, 0.28, 0, 0, 0, 0.15, 0.00457514, -0.122805, -0.21327)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D4"]
-shape = SubResource("BoxShape3D_r3fl7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TV/StaticBody3D4"]
-mesh = SubResource("BoxMesh_wc5p8")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="TV"]
-transform = Transform3D(0.36853, 0, 0, 0, 0.265341, 0, 0, 0, -0.00737059, -0.00191584, -0.111244, 0.13279)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TV/StaticBody3D3"]
-shape = SubResource("BoxShape3D_r3fl7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TV/StaticBody3D3"]
-mesh = SubResource("BoxMesh_4arys")
-
-[node name="Bed" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87994, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Bed"]
-transform = Transform3D(1, 0, 0, 0, 0.27, 0, 0, 0, 2.9, 0, 0.12174, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bed/StaticBody3D"]
-mesh = SubResource("BoxMesh_4xowi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bed/StaticBody3D"]
-shape = SubResource("BoxShape3D_a202f")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Bed"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bed/StaticBody3D2"]
-transform = Transform3D(0.709732, 0, 0, 0, 0.117222, 0, 0, 0, 0.255192, 0.00820994, 0.304913, -1.29336)
-mesh = SubResource("BoxMesh_noarx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bed/StaticBody3D2"]
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Bed"]
-transform = Transform3D(0.471273, 0, 0, 0, 0.773448, 0, 0, 0, 1.10571, -0.000731707, 0.260218, 0.251937)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bed/StaticBody3D3"]
-mesh = SubResource("PlaneMesh_jka67")
-
 [node name="Window" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90844, 2.72128, 0)
 
@@ -278,9 +195,10 @@ shape = SubResource("BoxShape3D_tereu")
 transform = Transform3D(0.0347166, 0, 0, 0, 0.0501597, 0, 0, 0, 0.155557, -0.453826, -0.055111, -0.459064)
 mesh = SubResource("BoxMesh_imku0")
 
-[node name="action_interactable" parent="." node_paths=PackedStringArray("manager") instance=ExtResource("2_5ruuo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.561103, -1.6098)
+[node name="action_interactable" parent="." node_paths=PackedStringArray("Interviewer", "manager") instance=ExtResource("2_5ruuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0580962, 1.01498, -2.7229)
 script = ExtResource("3_61bxy")
+Interviewer = NodePath("../Interviewer")
 manager = NodePath("../InteractableManager")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="action_interactable"]
@@ -290,3 +208,47 @@ mesh = SubResource("SphereMesh_u3qo1")
 [node name="InteractableManager" parent="." instance=ExtResource("3_u3qo1")]
 
 [node name="PalyerSpawner" parent="." instance=ExtResource("4_61bxy")]
+
+[node name="Desk" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00516564, 0.529143, -3.28612)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk"]
+
+[node name="Desk Top" type="MeshInstance3D" parent="Desk/StaticBody3D"]
+transform = Transform3D(2.1, 0, 0, 0, 0.15, 0, 0, 0, 0.7, -0.00338912, 0.284478, 0)
+mesh = SubResource("BoxMesh_61bxy")
+skeleton = NodePath("../..")
+
+[node name="Leg" type="MeshInstance3D" parent="Desk/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, -0.991554, -0.140207, 0.25225)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="Leg2" type="MeshInstance3D" parent="Desk/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, -0.991554, -0.140207, -0.279471)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="Leg3" type="MeshInstance3D" parent="Desk/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, 0.985111, -0.140207, -0.279471)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="Leg4" type="MeshInstance3D" parent="Desk/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, 0.985111, -0.140207, 0.277595)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149536, -0.0594482, -0.00201416)
+shape = SubResource("BoxShape3D_hgg63")
+
+[node name="Interviewer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0697875, 0.819355, -4.24208)
+script = ExtResource("5_1loai")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Interviewer"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interviewer/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00262213, -0.00385904, -0.22759)
+mesh = SubResource("CapsuleMesh_vbd26")

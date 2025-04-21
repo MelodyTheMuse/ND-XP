@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0doack0a84el"]
+[gd_scene load_steps=3 format=3 uid="uid://c0doack0a84el"]
 
 [ext_resource type="Script" uid="uid://by6gwutoglquq" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_37p78"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -28,3 +30,25 @@ offset_right = 276.25
 offset_bottom = 548.001
 scale = Vector2(3.19999, 8.00001)
 text = "Press F to interact"
+
+[node name="Dialogbox" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Dialogbox"]
+layout_mode = 0
+offset_left = -184.0
+offset_top = -11.0
+offset_right = 213.0
+offset_bottom = 34.0
+mouse_filter = 1
+label_settings = SubResource("LabelSettings_37p78")
