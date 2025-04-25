@@ -46,9 +46,9 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="Dialogbox"]
 layout_mode = 0
-offset_left = -184.0
-offset_top = -11.0
-offset_right = 213.0
-offset_bottom = 34.0
+offset_left = -552.0
+offset_top = -7.0
+offset_right = -155.0
+offset_bottom = 38.0
 mouse_filter = 1
 label_settings = SubResource("LabelSettings_37p78")

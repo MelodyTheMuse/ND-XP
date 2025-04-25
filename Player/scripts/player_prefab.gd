@@ -37,7 +37,7 @@ func get_inputs():
 	right = Input.is_action_pressed("Move_Right")
 	jump = Input.is_action_pressed("Jump")
 	interact = Input.is_action_pressed("Interact")
-	dialog = Input.is_action_pressed("Dialog_skip")
+	dialog = Input.is_action_just_pressed("Dialog_skip")
 
 func _walk() :
 	move_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backwards")

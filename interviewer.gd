@@ -20,6 +20,10 @@ func choose_dialog_interview():
 			text = "Good day to you"
 		2: 
 			text= "Shall we begin?"
+		3:
+			text = "I have read through your CV, and I have to say it is pretty good"
+		4:
+			text = "There is a few things that we have to go through however, before we can start the rest of the hiring process"
 	display_dialog_interview()
 
 func display_dialog_interview():
