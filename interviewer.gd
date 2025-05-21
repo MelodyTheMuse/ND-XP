@@ -1,7 +1,8 @@
 extends Node3D
-var label:Label
+var label:RichTextLabel
 var x = 1
 var text 
+var Dialogbox
 
 func start_interview():
 	find_dialog_label()
@@ -12,6 +13,7 @@ func start_interview():
 func find_dialog_label():
 	for c in Game.hud.get_children():
 		if c.name == "Dialogbox":
+			Dialogbox = c
 			label = c.get_child(0)
 
 func choose_dialog_interview():
@@ -27,6 +29,7 @@ func choose_dialog_interview():
 	display_dialog_interview()
 
 func display_dialog_interview():
+	Dialogbox.visible = true
 	label.text = text
 
 func raise_x():
