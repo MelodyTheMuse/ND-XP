@@ -1,0 +1,446 @@
+[gd_resource type="Resource" script_class="GraphData" load_steps=3 format=3 uid="uid://dfs4y4g0vdxiq"]
+
+[ext_resource type="Resource" uid="uid://bvnhfbtmu74lj" path="res://characters/interviewer.tres" id="1_sxbcn"]
+[ext_resource type="Script" uid="uid://wvsh7vndbr7" path="res://addons/dialogue_viewer/graph/graph_data.gd" id="2_bbell"]
+
+[resource]
+script = ExtResource("2_bbell")
+nodes = [{
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(280, 140),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": "Coffee "
+}, {
+"character": ExtResource("1_sxbcn"),
+"node_name": &"Character Node",
+"offset": Vector2(540, 140),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(880, 100),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Hi!
+Welcome to interstelllar Coffee!
+How can I help you today?"
+}, {
+"node_name": &"Option Node",
+"offset": Vector2(1140, 80),
+"options": {
+"I just want a snack": 4,
+"I would like a latte": 2,
+"I would like a simple coffe": 1,
+"What are the options I could have?": 3
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node_name": &"Text Node3",
+"offset": Vector2(1600, 40),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "We have lot's of options, we have coffee, tea, sandwiches and even icecreams, any of these sound intressting?"
+}, {
+"node_name": &"Text Node4",
+"offset": Vector2(1600, 260),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse, what kind of snack would you like? "
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(1700, -140),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"node_name": &"Option Node3",
+"offset": Vector2(1940, 260),
+"options": {
+"A cheese sandwich": 1,
+"A grilled cheese": 2,
+"That cookie there ": 3
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node_name": &"Text Node2",
+"offset": Vector2(1380, -180),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse coming right up!
+Please wait over there for it :D"
+}, {
+"node": "end",
+"node_name": &"End Node2",
+"offset": Vector2(2600, 360),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"node_name": &"Text Node5",
+"offset": Vector2(2260, 280),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse comming right up!
+Please wait over there for it :D"
+}, {
+"node_name": &"Option Node2",
+"offset": Vector2(1940, -160),
+"options": {
+"A coffee please": 1,
+"Can you give me a sandwich": 3,
+"Ice cream please.": 4,
+"Tea would be nice": 2
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(280, 140),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": "Coffee "
+}, {
+"character": ExtResource("1_sxbcn"),
+"node_name": &"Character Node",
+"offset": Vector2(540, 140),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(880, 100),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Hi!
+Welcome to interstelllar Coffee!
+How can I help you today?"
+}, {
+"node_name": &"Option Node",
+"offset": Vector2(1140, 80),
+"options": {
+"I just want a snack": 4,
+"I would like a latte": 2,
+"I would like a simple coffe": 1,
+"What are the options I could have?": 3
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node_name": &"Text Node3",
+"offset": Vector2(1600, 40),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "We have lot's of options, we have coffee, tea, sandwiches and even icecreams, any of these sound intressting?"
+}, {
+"node_name": &"Text Node4",
+"offset": Vector2(1600, 260),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse, what kind of snack would you like? "
+}, {
+"node_name": &"Option Node3",
+"offset": Vector2(1940, 260),
+"options": {
+"A cheese sandwich": 1,
+"A grilled cheese": 2,
+"That cookie there ": 3
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node_name": &"Text Node2",
+"offset": Vector2(1380, -180),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse coming right up!
+Please wait over there for it :D"
+}, {
+"node_name": &"Text Node5",
+"offset": Vector2(2260, 280),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse comming right up!
+Please wait over there for it :D"
+}, {
+"node": "end",
+"node_name": &"End Node2",
+"offset": Vector2(2540, -160),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"node_name": &"Option Node2",
+"offset": Vector2(1980, 0),
+"options": {
+"A coffee please": 1,
+"Can you give me a sandwich": 3,
+"Ice cream please.": 4,
+"Tea would be nice": 2
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(280, 140),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": "Coffee "
+}, {
+"character": ExtResource("1_sxbcn"),
+"node_name": &"Character Node",
+"offset": Vector2(540, 140),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(880, 100),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Hi!
+Welcome to interstelllar Coffee!
+How can I help you today?"
+}, {
+"node_name": &"Option Node",
+"offset": Vector2(1140, 80),
+"options": {
+"I just want a snack": 4,
+"I would like a latte": 2,
+"I would like a simple coffe": 1,
+"What are the options I could have?": 3
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node_name": &"Text Node3",
+"offset": Vector2(1600, 40),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "We have lot's of options, we have coffee, tea, sandwiches and even icecreams, any of these sound intressting?"
+}, {
+"node_name": &"Text Node4",
+"offset": Vector2(1600, 260),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse, what kind of snack would you like? "
+}, {
+"node_name": &"Option Node3",
+"offset": Vector2(1940, 260),
+"options": {
+"A cheese sandwich": 1,
+"A grilled cheese": 2,
+"That cookie there ": 3
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node_name": &"Text Node2",
+"offset": Vector2(1380, -180),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse coming right up!
+Please wait over there for it :D"
+}, {
+"node_name": &"Text Node5",
+"offset": Vector2(2260, 280),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Ofcourse comming right up!
+Please wait over there for it :D"
+}, {
+"node_name": &"Option Node2",
+"offset": Vector2(1980, 0),
+"options": {
+"A coffee please": 1,
+"Can you give me a sandwich": 3,
+"Ice cream please.": 4,
+"Tea would be nice": 2
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(2860, -220),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}]
+edges = Array[Dictionary]([{
+"from_node": &"Start Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Character Node",
+"to_port": 0
+}, {
+"from_node": &"Character Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Option Node",
+"to_port": 0
+}, {
+"from_node": &"Option Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node2",
+"to_port": 0
+}, {
+"from_node": &"Option Node",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Text Node2",
+"to_port": 0
+}, {
+"from_node": &"Option Node",
+"from_port": 2,
+"keep_alive": false,
+"to_node": &"Text Node3",
+"to_port": 0
+}, {
+"from_node": &"Option Node",
+"from_port": 3,
+"keep_alive": false,
+"to_node": &"Text Node4",
+"to_port": 0
+}, {
+"from_node": &"Text Node3",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Option Node2",
+"to_port": 0
+}, {
+"from_node": &"Text Node4",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Option Node3",
+"to_port": 0
+}, {
+"from_node": &"Option Node3",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Option Node3",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Option Node3",
+"from_port": 2,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Option Node2",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Option Node2",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Option Node2",
+"from_port": 2,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Option Node2",
+"from_port": 3,
+"keep_alive": false,
+"to_node": &"Text Node5",
+"to_port": 0
+}, {
+"from_node": &"Text Node2",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node5",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node",
+"to_port": 0
+}])
+readable = {
+&"Character Node": {
+"character": ExtResource("1_sxbcn"),
+"to_node": {
+0: &"Text Node"
+}
+},
+&"Option Node": {
+"options": {
+"I just want a snack": 3,
+"I would like a latte": 1,
+"I would like a simple coffe": 0,
+"What are the options I could have?": 2
+},
+"to_node": {
+0: &"Text Node2",
+1: &"Text Node2",
+2: &"Text Node3",
+3: &"Text Node4"
+}
+},
+&"Option Node2": {
+"options": {
+"A coffee please": 0,
+"Can you give me a sandwich": 2,
+"Ice cream please.": 3,
+"Tea would be nice": 1
+},
+"to_node": {
+0: &"Text Node5",
+1: &"Text Node5",
+2: &"Text Node5",
+3: &"Text Node5"
+}
+},
+&"Option Node3": {
+"options": {
+"A cheese sandwich": 0,
+"A grilled cheese": 1,
+"That cookie there ": 2
+},
+"to_node": {
+0: &"Text Node5",
+1: &"Text Node5",
+2: &"Text Node5"
+}
+},
+&"Start Node": {
+"text": {
+0: "Coffee "
+},
+"to_node": {
+0: &"Character Node"
+}
+},
+&"Text Node": {
+"text": {
+0: "Hi!
+Welcome to interstelllar Coffee!
+How can I help you today?"
+},
+"to_node": {
+0: &"Option Node"
+}
+},
+&"Text Node2": {
+"text": {
+0: "Ofcourse coming right up!
+Please wait over there for it :D"
+},
+"to_node": {
+0: &"End Node"
+}
+},
+&"Text Node3": {
+"text": {
+0: "We have lot's of options, we have coffee, tea, sandwiches and even icecreams, any of these sound intressting?"
+},
+"to_node": {
+0: &"Option Node2"
+}
+},
+&"Text Node4": {
+"text": {
+0: "Ofcourse, what kind of snack would you like? "
+},
+"to_node": {
+0: &"Option Node3"
+}
+},
+&"Text Node5": {
+"text": {
+0: "Ofcourse comming right up!
+Please wait over there for it :D"
+},
+"to_node": {
+0: &"End Node"
+}
+},
+"endNodeName": &"End Node",
+"startNodeName": &"Start Node"
+}

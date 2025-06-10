@@ -5,6 +5,7 @@ var text
 var Dialogbox
 
 func start_interview():
+	Input.mouse_mode = 3
 	find_dialog_label()
 	Game.player.dialog_signal.connect(raise_x)
 	choose_dialog_interview()
@@ -14,7 +15,7 @@ func find_dialog_label():
 	for c in Game.hud.get_children():
 		if c.name == "Dialogbox":
 			Dialogbox = c
-			label = c.get_child(0)
+			label = c.get_child(1)
 
 func choose_dialog_interview():
 	match x:

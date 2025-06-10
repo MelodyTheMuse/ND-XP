@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://buvmg22jvr77"]
+
+[ext_resource type="Script" uid="uid://duifc38j4lrl7" path="res://addons/dialogue_viewer/option/option_node.gd" id="1_51hrq"]
+[ext_resource type="PackedScene" uid="uid://b5rdrwhi011un" path="res://addons/dialogue_viewer/graph/Graph Node.tscn" id="1_w6a23"]
+
+[node name="Option Node" instance=ExtResource("1_w6a23")]
+title = "Option"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_51hrq")
+left_slot_type = 2
+right_slot_type = 2
+
+[node name="Add Option Button" type="Button" parent="." index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Add Option"
+
+[connection signal="pressed" from="Add Option Button" to="." method="_on_add_option_button_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0doack0a84el"]
+[gd_scene load_steps=3 format=3 uid="uid://c0doack0a84el"]
 
 [ext_resource type="Script" uid="uid://by6gwutoglquq" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="PackedScene" uid="uid://cldq52gv7jomw" path="res://addons/example/Dialog_barista.tscn" id="2_64ctp"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_37p78")
@@ -24,20 +25,30 @@ offset_bottom = 548.001
 scale = Vector2(3.19999, 8.00001)
 text = "Press F to interact"
 
-[node name="Dialogbox" type="Panel" parent="."]
+[node name="Dialogbox" type="Control" parent="."]
 visible = false
+layout_mode = 3
+anchors_preset = 0
 offset_left = 332.0
 offset_top = 533.0
 offset_right = 897.0
 offset_bottom = 648.0
 
+[node name="Node2D" parent="Dialogbox" instance=ExtResource("2_64ctp")]
+offset_left = -330.0
+offset_top = -537.0
+offset_right = -330.0
+offset_bottom = -537.0
+
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogbox"]
+visible = false
 layout_mode = 0
 offset_right = 560.0
 offset_bottom = 89.0
 fit_content = true
 
 [node name="Continue" type="RichTextLabel" parent="Dialogbox"]
+visible = false
 layout_mode = 0
 offset_left = 381.0
 offset_top = 94.0

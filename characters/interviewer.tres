@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://bvnhfbtmu74lj"]
+
+[ext_resource type="Script" uid="uid://bsniowx8gj1k8" path="res://addons/dialogue_viewer/character/character_data.gd" id="1_lrh6g"]
+
+[resource]
+script = ExtResource("1_lrh6g")
+character_name = "Barista"
+metadata/_custom_type_script = "uid://bsniowx8gj1k8"

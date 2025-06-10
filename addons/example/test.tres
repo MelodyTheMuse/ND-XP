@@ -1,0 +1,133 @@
+[gd_resource type="Resource" script_class="GraphData" load_steps=3 format=3 uid="uid://bttru4fsuuhib"]
+
+[ext_resource type="Resource" uid="uid://d257y24dor0m5" path="res://example/character.tres" id="1_hr0ed"]
+[ext_resource type="Script" uid="uid://wvsh7vndbr7" path="res://addons/dialogue_viewer/graph/graph_data.gd" id="1_umafu"]
+
+[resource]
+script = ExtResource("1_umafu")
+nodes = [{
+"character": ExtResource("1_hr0ed"),
+"node_name": &"Character Node",
+"offset": Vector2(100, 100),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(463, 202),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Would you like to start a game?"
+}, {
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(-273, 114),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": "dghj"
+}, {
+"node_name": &"Option Node",
+"offset": Vector2(694, 344),
+"options": {
+"No": 1,
+"Yes": 2
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(1260, 360),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"character": ExtResource("1_hr0ed"),
+"node_name": &"Character Node",
+"offset": Vector2(100, 100),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(463, 202),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Would you like to start a game?"
+}, {
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(-273, 114),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": "dghj"
+}, {
+"node_name": &"Option Node",
+"offset": Vector2(694, 344),
+"options": {
+"No": 2,
+"Yes": 1
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(1260, 360),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}]
+edges = Array[Dictionary]([{
+"from_node": &"Character Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node",
+"to_port": 0
+}, {
+"from_node": &"Start Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Character Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Option Node",
+"to_port": 0
+}, {
+"from_node": &"Option Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node",
+"to_port": 0
+}, {
+"from_node": &"Option Node",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Text Node",
+"to_port": 0
+}])
+readable = {
+&"Character Node": {
+"character": ExtResource("1_hr0ed"),
+"to_node": {
+0: &"Text Node"
+}
+},
+&"Option Node": {
+"options": {
+"No": 0,
+"Yes": 1
+},
+"to_node": {
+0: &"End Node",
+1: &"Text Node"
+}
+},
+&"Start Node": {
+"text": {
+0: "dghj"
+},
+"to_node": {
+0: &"Character Node"
+}
+},
+&"Text Node": {
+"text": {
+0: "Would you like to start a game?"
+},
+"to_node": {
+0: &"Option Node"
+}
+},
+"endNodeName": &"End Node",
+"startNodeName": &"Start Node"
+}

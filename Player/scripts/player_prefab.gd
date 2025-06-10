@@ -52,7 +52,7 @@ func _walk() :
 		velocity.z = move_toward(velocity.z,0,speed)
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = 2
 	interact_signal.emit()
 
 func signal_emits():

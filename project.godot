@@ -23,6 +23,10 @@ Game="*res://game.gd"
 
 project/assembly_name="IndivEdTech"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_viewer/plugin.cfg")
+
 [input]
 
 Move_Forward={
