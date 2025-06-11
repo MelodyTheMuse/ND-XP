@@ -2,7 +2,7 @@ extends Control
 
 @onready var label:Label = $Label
 @onready var end:Label = $EndText
-@onready var dialogue_reader: DialogueReader = $DialogueReader
+var dialogue_reader: DialogueReader
 @onready var option_btn_ctnr = $ScrollContainer/OptionButtonContainer
 @onready var next_dialogue_btn = $Button
 var selected_option = ""
@@ -10,7 +10,6 @@ var dia:Control
 var timer:Timer
 
 func _ready() -> void:
-	dialogue_reader.end_reached.connect(on_end_reached)
 	option_btn_ctnr.hide()
 	end.hide()
 	
@@ -20,7 +19,6 @@ func _on_button_pressed() -> void:
 	if dialogue == null: return
 	label.text = (dialogue.speaker as CharacterData).character_name + ": \n" 
 	if dialogue.isOption:
-		
 		handle_options(dialogue.options)
 	else:
 		label.text += dialogue.text
@@ -65,3 +63,23 @@ func dialog_timer():
 		timer.wait_time = 1
 		add_child(timer)
 	
+func set_reader(reader:DialogueReader):
+	if dialogue_reader != null:
+		dialogue_reader.end_reached.disconnect(on_end_reached)
+		remove_child(dialogue_reader)
+	dialogue_reader = reader
+	option_btn_ctnr.hide()
+	end.hide()
+	next_dialogue_btn.show()
+	dialogue_reader.end_reached.connect(on_end_reached)
+	add_child(dialogue_reader)
+	
+func set_dialog_line():
+	var dialogue = dialogue_reader.get_next_line(selected_option) as Dialogue
+	selected_option = ""
+	if dialogue == null: return
+	label.text = (dialogue.speaker as CharacterData).character_name + ": \n" 
+	if dialogue.isOption:
+		handle_options(dialogue.options)
+	else:
+		label.text += dialogue.text

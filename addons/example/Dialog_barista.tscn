@@ -1,20 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cldq52gv7jomw"]
+[gd_scene load_steps=4 format=3 uid="uid://cldq52gv7jomw"]
 
 [ext_resource type="Script" uid="uid://d27qes6xdklhu" path="res://addons/example/test.gd" id="1_pt76i"]
-[ext_resource type="Script" uid="uid://c4e6qxe3kxm2" path="res://addons/dialogue_viewer/dialogue_reader.gd" id="2_cdypw"]
-[ext_resource type="Resource" uid="uid://dfs4y4g0vdxiq" path="res://barista.tres" id="3_60hgy"]
+[ext_resource type="PackedScene" uid="uid://bxsn40fnmx00d" path="res://barista_reader.tscn" id="2_33qfm"]
 [ext_resource type="Texture2D" uid="uid://cnluwsoxchgne" path="res://addons/example/images/pepper_portrait.png" id="4_jjwob"]
 
-[node name="Node2D" type="Control"]
+[node name="Dialogviewer" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pt76i")
 
-[node name="DialogueReader" type="Node" parent="."]
-script = ExtResource("2_cdypw")
-dialogue = ExtResource("3_60hgy")
+[node name="DialogueReader" parent="." instance=ExtResource("2_33qfm")]
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 464.0
 offset_top = 326.0
 offset_right = 688.0
@@ -25,6 +23,7 @@ autowrap_mode = 2
 
 [node name="EndText" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 448.0
 offset_top = 528.0
 offset_right = 704.0
@@ -35,6 +34,7 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 488.0
 offset_top = 232.0
 offset_right = 664.0
@@ -44,6 +44,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 414.0
 offset_top = 390.0
 offset_right = 733.0
@@ -55,6 +56,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 528.0
 offset_right = 704.0

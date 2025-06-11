@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://miurvv0mxmjx"]
+[gd_scene load_steps=34 format=3 uid="uid://miurvv0mxmjx"]
 
 [ext_resource type="PackedScene" uid="uid://dk04ycwedh7qa" path="res://Interactable/Prefab/interactable_prefab.tscn" id="2_5ruuo"]
 [ext_resource type="Script" uid="uid://1txen226bnkc" path="res://Interactable/Scripts/action_interactable.gd" id="3_61bxy"]
 [ext_resource type="PackedScene" uid="uid://552ixb33272g" path="res://Interactable/Manager/InteractableManager.tscn" id="3_u3qo1"]
 [ext_resource type="PackedScene" uid="uid://bqaxoejion0cq" path="res://Player/prefab/palyer_spawner.tscn" id="4_61bxy"]
 [ext_resource type="Script" uid="uid://bsevjlaygmpxt" path="res://interviewer.gd" id="5_1loai"]
+[ext_resource type="Resource" uid="uid://dfs4y4g0vdxiq" path="res://barista.tres" id="6_hgg63"]
+[ext_resource type="Script" uid="uid://d1pkr744hy6id" path="res://stranger.gd" id="7_vbd26"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_4xowi"]
 
@@ -47,6 +49,74 @@ material = SubResource("StandardMaterial3D_cdqbm")
 size = Vector3(2.05365, 0.822998, 0.671753)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vbd26"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hgg63"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vbd26"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgg63"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbd26"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axjh2"]
+albedo_color = Color(1, 0, 0.176471, 1)
+
+[sub_resource type="Animation" id="Animation_4v3hs"]
+resource_name = "Way_point"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0333333, 1, -4.35882, 0, 0, 0.966667, 1, -4.65576, 2.18566, -0.0459178)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MeshInstance3D:material_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("StandardMaterial3D_hgg63"), SubResource("StandardMaterial3D_vbd26"), SubResource("StandardMaterial3D_axjh2")]
+}
+
+[sub_resource type="Animation" id="Animation_yc6jp"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -4.35882, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MeshInstance3D:material_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1kin1"]
+_data = {
+&"RESET": SubResource("Animation_yc6jp"),
+&"Way_point": SubResource("Animation_4v3hs")
+}
+
+[sub_resource type="SphereMesh" id="SphereMesh_6vgh5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_axjh2"]
+radius = 0.853304
 
 [node name="Room" type="Node3D"]
 
@@ -243,12 +313,84 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149536, -0.0594482, -0.00201416)
 shape = SubResource("BoxShape3D_hgg63")
 
+[node name="Desk2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65143, 0.529143, -3.28612)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk2"]
+
+[node name="Desk Top" type="MeshInstance3D" parent="Desk2/StaticBody3D"]
+transform = Transform3D(2.1, 0, 0, 0, 0.15, 0, 0, 0, 0.7, -0.00338912, 0.284478, 0)
+mesh = SubResource("BoxMesh_61bxy")
+skeleton = NodePath("../..")
+
+[node name="Leg" type="MeshInstance3D" parent="Desk2/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, -0.991554, -0.140207, 0.25225)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="Leg2" type="MeshInstance3D" parent="Desk2/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, -0.991554, -0.140207, -0.279471)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="Leg3" type="MeshInstance3D" parent="Desk2/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, 0.985111, -0.140207, -0.279471)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="Leg4" type="MeshInstance3D" parent="Desk2/StaticBody3D"]
+transform = Transform3D(0.0648, 0, 0, 0, 0.720585, 0, 0, 0, 0.07056, 0.985111, -0.140207, 0.277595)
+mesh = SubResource("BoxMesh_1loai")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149536, -0.0594482, -0.00201416)
+shape = SubResource("BoxShape3D_hgg63")
+
 [node name="Interviewer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0697875, 0.819355, -4.24208)
 script = ExtResource("5_1loai")
+dialog_text = ExtResource("6_hgg63")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interviewer"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interviewer/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00262213, -0.00385904, -0.22759)
 mesh = SubResource("CapsuleMesh_vbd26")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 4.08397, 0)
+omni_range = 30.921
+
+[node name="Stranger" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69145, 0, 0)
+script = ExtResource("7_vbd26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stranger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03596, 1.98749)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stranger/StaticBody3D"]
+mesh = SubResource("CapsuleMesh_hgg63")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stranger/StaticBody3D"]
+shape = SubResource("CapsuleShape3D_vbd26")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stranger"]
+libraries = {
+&"": SubResource("AnimationLibrary_1kin1")
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stranger/AnimationPlayer"]
+transform = Transform3D(0.6615, 0, 0, 0, 0.0126, 0, 0, 0, 0.84, -4.35882, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_6vgh5")
+
+[node name="Area3D" type="Area3D" parent="Stranger"]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stranger/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.562371, 0, 0)
+shape = SubResource("SphereShape3D_axjh2")
+
+[connection signal="body_entered" from="Stranger/Area3D" to="Stranger" method="_on_area_3d_body_entered"]

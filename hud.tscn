@@ -34,7 +34,7 @@ offset_top = 533.0
 offset_right = 897.0
 offset_bottom = 648.0
 
-[node name="Node2D" parent="Dialogbox" instance=ExtResource("2_64ctp")]
+[node name="Dialogviewer" parent="Dialogbox" instance=ExtResource("2_64ctp")]
 offset_left = -330.0
 offset_top = -537.0
 offset_right = -330.0
