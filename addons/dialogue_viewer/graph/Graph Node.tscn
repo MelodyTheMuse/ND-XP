@@ -5,9 +5,11 @@
 [node name="GraphNode" type="GraphNode"]
 offset_right = 192.0
 offset_bottom = 192.0
+focus_mode = 1
 resizable = true
 title = "Node"
 script = ExtResource("1_d5s5y")
 
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="node_deselected" from="." to="." method="_on_node_deselected"]
 [connection signal="node_selected" from="." to="." method="_on_node_selected"]

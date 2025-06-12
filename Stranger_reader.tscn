@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://hjrolkhk8or8"]
+
+[ext_resource type="Script" uid="uid://c4e6qxe3kxm2" path="res://addons/dialogue_viewer/dialogue_reader.gd" id="1_hpqux"]
+[ext_resource type="Resource" uid="uid://fy3vwji6d4kr" path="res://stranger_dialog.tres" id="2_pkc77"]
+
+[node name="DialogueReader" type="Node"]
+script = ExtResource("1_hpqux")
+dialogue = ExtResource("2_pkc77")

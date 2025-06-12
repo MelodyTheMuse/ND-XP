@@ -4,279 +4,123 @@
 [ext_resource type="Script" uid="uid://wvsh7vndbr7" path="res://addons/dialogue_viewer/graph/graph_data.gd" id="2_me4oo"]
 
 [resource]
+resource_name = "stranger_dialog"
 script = ExtResource("2_me4oo")
 nodes = [{
-"character": ExtResource("1_kslmy"),
-"node_name": &"Character Node",
-"offset": Vector2(240, -140),
-"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
-}, {
-"node": "start",
-"node_name": &"Start Node",
-"offset": Vector2(-40, -20),
-"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
-"text": ""
-}, {
-"node_name": &"Text Node",
-"offset": Vector2(640, -120),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Hello, I haven't seen you here before? New here?"
-}, {
-"node_name": &"Option Node",
-"offset": Vector2(1020, -80),
+"node_name": &"Option Node2",
+"offset": Vector2(1933.65, -189.166),
 "options": {
-"......": 4,
-"Hallo I uh do not speak to strangers": 2,
-"Hallo, uuh yea...": 1,
-"Please leave me alone": 3
+",,,,,,": 4,
+"No, I used to": 2,
+"Why are you looking that close": 3,
+"Yea I go to fontys": 1
 },
 "scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
 }, {
-"node_name": &"Text Node2",
-"offset": Vector2(1280, -240),
+"node": "end",
+"node_name": &"End Node3",
+"offset": Vector2(2631.65, 230.936),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"node_name": &"Text Node10",
+"offset": Vector2(2300.18, 186.984),
 "scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "I see, this is a nice Coffee shop, have been coming here for years now haha"
+"text": "I am sorry I did not mean to make you uncomfortable, I will leave."
+}, {
+"node_name": &"Text Node9",
+"offset": Vector2(2245.24, -89.5509),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Oh, you must have visted it than, I  need to go, enjoy your day"
+}, {
+"node": "end",
+"node_name": &"End Node2",
+"offset": Vector2(1781.9, 62.4517),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(2275.73, 537.53),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}, {
+"character": ExtResource("1_kslmy"),
+"node_name": &"Character Node",
+"offset": Vector2(260, -40),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
 }, {
 "node_name": &"Text Node3",
-"offset": Vector2(1560, -240),
+"offset": Vector2(1620, -320),
 "scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
 "text": "You a student still?
 I saw some sort of school badge, sorry if that was rude.
 
 "
 }, {
-"node_name": &"Option Node2",
-"offset": Vector2(1880, -180),
-"options": {
-".....": 4,
-"No i am not a student.": 3,
-"Why are you looking that close at me?": 2,
-"Yea I go to fontys ICT": 1
-},
-"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
 "node_name": &"Text Node4",
-"offset": Vector2(1300, -20),
+"offset": Vector2(1360, -60),
 "scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
 "text": "Alright sorry to intrude than, enjoy the rest of your day"
 }, {
 "node_name": &"Text Node5",
-"offset": Vector2(1280, 200),
+"offset": Vector2(1340, 300),
 "scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
 "text": "Are you okay?
 I do not bite you know,
 Are you perhaps deaf or mute?"
 }, {
-"node": "end",
-"node_name": &"End Node",
-"offset": Vector2(2320, 80),
-"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+"node_name": &"Option Node3",
+"offset": Vector2(1660, 360),
+"options": {
+"....": 3,
+"Ignore": 2,
+"Nod": 1
+},
+"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
 }, {
-"character": ExtResource("1_kslmy"),
-"node_name": &"Character Node",
-"offset": Vector2(240, -140),
-"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+"node_name": &"Text Node6",
+"offset": Vector2(1980, 260),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Oh I am sorry, I will leave you be, have a good day "
+}, {
+"node_name": &"Text Node7",
+"offset": Vector2(1980, 460),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Hallo??
+You are just ignoring me aren't, you are such a jerk!
+Rot in Hell!"
+}, {
+"node_name": &"Text Node8",
+"offset": Vector2(2220, -300),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Oh me too! 
+Well enjoy your day  en your order"
+}, {
+"node_name": &"Text Node2",
+"offset": Vector2(1320, -400),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "I see, this is a nice Coffee shop, have been coming here for years now haha"
 }, {
 "node": "start",
 "node_name": &"Start Node",
-"offset": Vector2(-40, -20),
+"offset": Vector2(-60, -200),
 "scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
 "text": ""
 }, {
 "node_name": &"Text Node",
-"offset": Vector2(640, -120),
+"offset": Vector2(560, -80),
 "scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
 "text": "Hello, I haven't seen you here before? New here?"
 }, {
 "node_name": &"Option Node",
-"offset": Vector2(1020, -80),
+"offset": Vector2(820, -40),
 "options": {
-"......": 4,
+".....": 4,
 "Hallo I uh do not speak to strangers": 2,
 "Hallo, uuh yea...": 1,
 "Please leave me alone": 3
 },
 "scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
-"node_name": &"Text Node2",
-"offset": Vector2(1280, -240),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "I see, this is a nice Coffee shop, have been coming here for years now haha"
-}, {
-"node_name": &"Text Node3",
-"offset": Vector2(1560, -240),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "You a student still?
-I saw some sort of school badge, sorry if that was rude.
-
-"
-}, {
-"node_name": &"Option Node2",
-"offset": Vector2(1880, -180),
-"options": {
-".....": 4,
-"No i am not a student.": 3,
-"Why are you looking that close at me?": 2,
-"Yea I go to fontys ICT": 1
-},
-"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
-"node_name": &"Text Node4",
-"offset": Vector2(1300, -20),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Alright sorry to intrude than, enjoy the rest of your day"
-}, {
-"node_name": &"Text Node5",
-"offset": Vector2(1280, 200),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Are you okay?
-I do not bite you know,
-Are you perhaps deaf or mute?"
-}, {
-"node": "end",
-"node_name": &"End Node",
-"offset": Vector2(2320, 80),
-"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
-}, {
-"character": ExtResource("1_kslmy"),
-"node_name": &"Character Node",
-"offset": Vector2(240, -140),
-"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
-}, {
-"node": "start",
-"node_name": &"Start Node",
-"offset": Vector2(-40, -20),
-"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
-"text": ""
-}, {
-"node_name": &"Text Node",
-"offset": Vector2(640, -120),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Hello, I haven't seen you here before? New here?"
-}, {
-"node_name": &"Option Node",
-"offset": Vector2(1020, -80),
-"options": {
-"......": 4,
-"Hallo I uh do not speak to strangers": 2,
-"Hallo, uuh yea...": 1,
-"Please leave me alone": 3
-},
-"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
-"node_name": &"Text Node2",
-"offset": Vector2(1280, -240),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "I see, this is a nice Coffee shop, have been coming here for years now haha"
-}, {
-"node_name": &"Text Node3",
-"offset": Vector2(1560, -240),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "You a student still?
-I saw some sort of school badge, sorry if that was rude.
-
-"
-}, {
-"node_name": &"Option Node2",
-"offset": Vector2(1880, -180),
-"options": {
-".....": 4,
-"No i am not a student.": 3,
-"Why are you looking that close at me?": 2,
-"Yea I go to fontys ICT": 1
-},
-"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
-"node_name": &"Text Node4",
-"offset": Vector2(1300, -20),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Alright sorry to intrude than, enjoy the rest of your day"
-}, {
-"node_name": &"Text Node5",
-"offset": Vector2(1280, 200),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Are you okay?
-I do not bite you know,
-Are you perhaps deaf or mute?"
-}, {
-"node": "end",
-"node_name": &"End Node",
-"offset": Vector2(2320, 80),
-"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
-}, {
-"character": ExtResource("1_kslmy"),
-"node_name": &"Character Node",
-"offset": Vector2(240, -140),
-"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
-}, {
-"node": "start",
-"node_name": &"Start Node",
-"offset": Vector2(-40, -20),
-"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
-"text": ""
-}, {
-"node_name": &"Text Node",
-"offset": Vector2(640, -120),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Hello, I haven't seen you here before? New here?"
-}, {
-"node_name": &"Option Node",
-"offset": Vector2(1020, -80),
-"options": {
-"......": 4,
-"Hallo I uh do not speak to strangers": 2,
-"Hallo, uuh yea...": 1,
-"Please leave me alone": 3
-},
-"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
-"node_name": &"Text Node2",
-"offset": Vector2(1280, -240),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "I see, this is a nice Coffee shop, have been coming here for years now haha"
-}, {
-"node_name": &"Text Node3",
-"offset": Vector2(1560, -240),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "You a student still?
-I saw some sort of school badge, sorry if that was rude.
-
-"
-}, {
-"node_name": &"Option Node2",
-"offset": Vector2(1880, -180),
-"options": {
-".....": 4,
-"No i am not a student.": 3,
-"Why are you looking that close at me?": 2,
-"Yea I go to fontys ICT": 1
-},
-"scene_path": "res://addons/dialogue_viewer/option/Option Node.tscn"
-}, {
-"node_name": &"Text Node4",
-"offset": Vector2(1300, -20),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Alright sorry to intrude than, enjoy the rest of your day"
-}, {
-"node_name": &"Text Node5",
-"offset": Vector2(1280, 200),
-"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
-"text": "Are you okay?
-I do not bite you know,
-Are you perhaps deaf or mute?"
-}, {
-"node": "end",
-"node_name": &"End Node",
-"offset": Vector2(2320, 80),
-"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
 }]
-edges = Array[Dictionary]([{
-"from_node": &"Start Node",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Character Node",
-"to_port": 0
-}, {
+edges = [{
 "from_node": &"Character Node",
 "from_port": 0,
 "keep_alive": false,
@@ -301,12 +145,6 @@ edges = Array[Dictionary]([{
 "to_node": &"Text Node3",
 "to_port": 0
 }, {
-"from_node": &"Text Node3",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Option Node2",
-"to_port": 0
-}, {
 "from_node": &"Option Node",
 "from_port": 1,
 "keep_alive": false,
@@ -325,36 +163,102 @@ edges = Array[Dictionary]([{
 "to_node": &"Text Node5",
 "to_port": 0
 }, {
-"from_node": &"Text Node4",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"End Node",
-"to_port": 0
-}, {
 "from_node": &"Text Node5",
 "from_port": 0,
 "keep_alive": false,
-"to_node": &"End Node",
+"to_node": &"Option Node3",
 "to_port": 0
 }, {
-"from_node": &"Option Node2",
-"from_port": 3,
+"from_node": &"Option Node3",
+"from_port": 0,
 "keep_alive": false,
-"to_node": &"End Node",
+"to_node": &"Text Node6",
 "to_port": 0
 }, {
-"from_node": &"Option Node2",
+"from_node": &"Option Node3",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Text Node7",
+"to_port": 0
+}, {
+"from_node": &"Option Node3",
 "from_port": 2,
 "keep_alive": false,
+"to_node": &"Text Node7",
+"to_port": 0
+}, {
+"from_node": &"Text Node7",
+"from_port": 0,
+"keep_alive": false,
 "to_node": &"End Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node6",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node4",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node2",
+"to_port": 0
+}, {
+"from_node": &"Text Node10",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node3",
+"to_port": 0
+}, {
+"from_node": &"Text Node9",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node3",
+"to_port": 0
+}, {
+"from_node": &"Text Node8",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node3",
+"to_port": 0
+}, {
+"from_node": &"Start Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Character Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node3",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Option Node2",
+"to_port": 0
+}, {
+"from_node": &"Option Node2",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node8",
 "to_port": 0
 }, {
 "from_node": &"Option Node2",
 "from_port": 1,
 "keep_alive": false,
-"to_node": &"End Node",
+"to_node": &"Text Node9",
 "to_port": 0
-}])
+}, {
+"from_node": &"Option Node2",
+"from_port": 2,
+"keep_alive": false,
+"to_node": &"Text Node10",
+"to_port": 0
+}, {
+"from_node": &"Option Node2",
+"from_port": 3,
+"keep_alive": false,
+"to_node": &"Text Node10",
+"to_port": 0
+}]
 readable = {
 &"Character Node": {
 "character": ExtResource("1_kslmy"),
@@ -362,13 +266,19 @@ readable = {
 0: &"Text Node"
 }
 },
+&"End Node": "end",
+&"End Node2": "end",
+&"End Node3": "end",
 &"Option Node": {
-"options": {
-"......": 3,
-"Hallo I uh do not speak to strangers": 1,
-"Hallo, uuh yea...": 0,
+"options": [{
+".....": 3
+}, {
+"Hallo I uh do not speak to strangers": 1
+}, {
+"Hallo, uuh yea...": 0
+}, {
 "Please leave me alone": 2
-},
+}],
 "to_node": {
 0: &"Text Node2",
 1: &"Text Node4",
@@ -377,19 +287,38 @@ readable = {
 }
 },
 &"Option Node2": {
-"options": {
-".....": 3,
-"No i am not a student.": 2,
-"Why are you looking that close at me?": 1,
-"Yea I go to fontys ICT": 0
-},
+"options": [{
+"Yea I go to fontys": 0
+}, {
+"No, I used to": 1
+}, {
+"Why are you looking that close": 2
+}, {
+",,,,,,": 3
+}],
 "to_node": {
-1: &"End Node",
-2: &"End Node",
-3: &"End Node"
+0: &"Text Node8",
+1: &"Text Node9",
+2: &"Text Node10",
+3: &"Text Node10"
+}
+},
+&"Option Node3": {
+"options": [{
+"Nod": 0
+}, {
+"Ignore": 1
+}, {
+"....": 2
+}],
+"to_node": {
+0: &"Text Node6",
+1: &"Text Node7",
+2: &"Text Node7"
 }
 },
 &"Start Node": {
+"node": "start",
 "text": {
 0: ""
 },
@@ -403,6 +332,14 @@ readable = {
 },
 "to_node": {
 0: &"Option Node"
+}
+},
+&"Text Node10": {
+"text": {
+0: "I am sorry I did not mean to make you uncomfortable, I will leave."
+},
+"to_node": {
+0: &"End Node3"
 }
 },
 &"Text Node2": {
@@ -429,7 +366,7 @@ I saw some sort of school badge, sorry if that was rude.
 0: "Alright sorry to intrude than, enjoy the rest of your day"
 },
 "to_node": {
-0: &"End Node"
+0: &"End Node2"
 }
 },
 &"Text Node5": {
@@ -439,9 +376,43 @@ I do not bite you know,
 Are you perhaps deaf or mute?"
 },
 "to_node": {
+0: &"Option Node3"
+}
+},
+&"Text Node6": {
+"text": {
+0: "Oh I am sorry, I will leave you be, have a good day "
+},
+"to_node": {
 0: &"End Node"
 }
 },
-"endNodeName": &"End Node",
+&"Text Node7": {
+"text": {
+0: "Hallo??
+You are just ignoring me aren't, you are such a jerk!
+Rot in Hell!"
+},
+"to_node": {
+0: &"End Node"
+}
+},
+&"Text Node8": {
+"text": {
+0: "Oh me too! 
+Well enjoy your day  en your order"
+},
+"to_node": {
+0: &"End Node3"
+}
+},
+&"Text Node9": {
+"text": {
+0: "Oh, you must have visted it than, I  need to go, enjoy your day"
+},
+"to_node": {
+0: &"End Node3"
+}
+},
 "startNodeName": &"Start Node"
 }

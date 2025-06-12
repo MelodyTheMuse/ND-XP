@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cldq52gv7jomw"]
 
-[ext_resource type="Script" uid="uid://d27qes6xdklhu" path="res://addons/example/test.gd" id="1_pt76i"]
+[ext_resource type="Script" uid="uid://d27qes6xdklhu" path="res://example/test.gd" id="1_pt76i"]
 [ext_resource type="PackedScene" uid="uid://bxsn40fnmx00d" path="res://barista_reader.tscn" id="2_33qfm"]
-[ext_resource type="Texture2D" uid="uid://cnluwsoxchgne" path="res://addons/example/images/pepper_portrait.png" id="4_jjwob"]
+[ext_resource type="Texture2D" uid="uid://cnluwsoxchgne" path="res://example/images/pepper_portrait.png" id="4_jjwob"]
 
 [node name="Dialogviewer" type="Control"]
 layout_mode = 3

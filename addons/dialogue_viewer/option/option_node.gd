@@ -2,7 +2,7 @@
 extends DialogueNode
 
 class_name OptionNode
-var option_line_scene = preload("res://addons/dialogue_viewer/option/option_line.tscn")
+var option_line_scene = preload("./option_line.tscn")
 var options = {}
 
 func get_node_data()-> Dictionary:
@@ -18,6 +18,7 @@ func set_node_data(data):
 	for option in data["options"]:
 		var option_line = option_line_scene.instantiate() as OptionLine
 		add_child(option_line,true)
+		move_child(option_line, data["options"][option])
 		option_line.text = option
 		options[option_line] = data["options"][option]
 		set_slot_enabled_right(options[option_line], true)

@@ -2,7 +2,7 @@
 extends GraphNode
 class_name DialogueNode
 
-var graph: GraphEdit
+var graph: DialogueGraph
 
 @export var left_slot_type :slot_type = slot_type.TEXT
 @export var right_slot_type :slot_type = slot_type.TEXT
@@ -67,3 +67,8 @@ func get_node_data() -> Dictionary:
 func set_node_data(data):
 	name = data["node_name"]
 	position_offset = data["offset"]
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == KEY_DELETE or event.keycode == KEY_BACKSPACE:
+			_on_node_deselected()
+			queue_free()

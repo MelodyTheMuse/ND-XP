@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0doack0a84el"]
 
 [ext_resource type="Script" uid="uid://by6gwutoglquq" path="res://hud.gd" id="1_37p78"]
-[ext_resource type="PackedScene" uid="uid://cldq52gv7jomw" path="res://addons/example/Dialog_barista.tscn" id="2_64ctp"]
+[ext_resource type="PackedScene" uid="uid://cldq52gv7jomw" path="res://example/Dialog_barista.tscn" id="2_64ctp"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_37p78")

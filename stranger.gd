@@ -3,7 +3,7 @@ extends Node3D
 @onready var anime = $AnimationPlayer
 var dialogviewer:Control
 var dialogreader:DialogueReader
-var barista_reader_scene:PackedScene = preload("res://barista_reader.tscn")
+var stranger_reader_scene:PackedScene = preload("res://Stranger_reader.tscn")
 var Dialogbox
 var timer:Timer
 
@@ -28,7 +28,7 @@ func display_dialog_stanger():
 	dialogviewer.set_dialog_line()
 	Dialogbox.visible = true
 func set_dialog():
-	dialogreader = barista_reader_scene.instantiate()
+	dialogreader = stranger_reader_scene.instantiate()
 	dialogviewer.set_reader(dialogreader)
 
 func dialog_timer():
