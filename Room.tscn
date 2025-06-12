@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://miurvv0mxmjx"]
+[gd_scene load_steps=38 format=3 uid="uid://miurvv0mxmjx"]
 
 [ext_resource type="PackedScene" uid="uid://dk04ycwedh7qa" path="res://Interactable/Prefab/interactable_prefab.tscn" id="2_5ruuo"]
 [ext_resource type="Script" uid="uid://1txen226bnkc" path="res://Interactable/Scripts/action_interactable.gd" id="3_61bxy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bsevjlaygmpxt" path="res://interviewer.gd" id="5_1loai"]
 [ext_resource type="Resource" uid="uid://dfs4y4g0vdxiq" path="res://barista.tres" id="6_hgg63"]
 [ext_resource type="Script" uid="uid://d1pkr744hy6id" path="res://stranger.gd" id="7_vbd26"]
+[ext_resource type="Script" uid="uid://cqhhm01khfhlt" path="res://pick_up_order.gd" id="8_axjh2"]
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_4xowi"]
 
@@ -75,6 +76,51 @@ tracks/1/keys = {
 "update": 1,
 "values": [null]
 }
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Coffee/AnimationPlayer2/MeshInstance3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -2.78497, 0, -2.9861)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Coffee/AnimationPlayer2/MeshInstance3D:material_override")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v3hs"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="Animation" id="Animation_1kin1"]
+resource_name = "WayPoint"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Coffee/AnimationPlayer2/MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0333333, 1, -2.78497, 0, -2.9861, 0.966667, 1, -2.85499, 1.62171, -3.1521)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Coffee/AnimationPlayer2/MeshInstance3D:material_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [null, SubResource("StandardMaterial3D_4v3hs")]
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgg63"]
 
@@ -110,6 +156,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1kin1"]
 _data = {
 &"RESET": SubResource("Animation_yc6jp"),
+&"WayPoint": SubResource("Animation_1kin1"),
 &"Way_point": SubResource("Animation_4v3hs")
 }
 
@@ -117,6 +164,8 @@ _data = {
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_axjh2"]
 radius = 0.853304
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4v3hs"]
 
 [node name="Room" type="Node3D"]
 
@@ -273,6 +322,7 @@ manager = NodePath("../InteractableManager")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="action_interactable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0174054)
+visible = false
 mesh = SubResource("SphereMesh_u3qo1")
 
 [node name="InteractableManager" parent="." instance=ExtResource("3_u3qo1")]
@@ -393,4 +443,28 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.562371, 0, 0)
 shape = SubResource("SphereShape3D_axjh2")
 
+[node name="Coffee" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6215, 0, -3.15478)
+script = ExtResource("8_axjh2")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Coffee"]
+root_node = NodePath("../../Stranger")
+libraries = {
+&"": SubResource("AnimationLibrary_1kin1")
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Coffee/AnimationPlayer2"]
+transform = Transform3D(0.6615, 0, 0, 0, 0.0126, 0, 0, 0, 0.84, -2.78497, 0, -2.9861)
+visible = false
+mesh = SubResource("SphereMesh_6vgh5")
+
+[node name="Area3D" type="Area3D" parent="Coffee"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coffee/Area3D"]
+transform = Transform3D(1.8158, 0, 0, 0, 2.39964, 0, 0, 0, 1.36556, 0, 0, 0)
+shape = SubResource("SphereShape3D_4v3hs")
+
 [connection signal="body_entered" from="Stranger/Area3D" to="Stranger" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Coffee/Area3D" to="Coffee" method="_on_area_3d_2_body_entered"]

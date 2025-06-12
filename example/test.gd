@@ -43,7 +43,7 @@ func option_pressed(option):
 func on_end_reached():
 	next_dialogue_btn.hide()
 	end.show()
-	Input.mouse_mode = 2
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	dialog_timer()
 
 func hide_dialog():
@@ -73,6 +73,7 @@ func set_reader(reader:DialogueReader):
 	next_dialogue_btn.show()
 	dialogue_reader.end_reached.connect(on_end_reached)
 	add_child(dialogue_reader)
+	print("set_reader_finished")
 	
 func set_dialog_line():
 	var dialogue = dialogue_reader.get_next_line(selected_option) as Dialogue

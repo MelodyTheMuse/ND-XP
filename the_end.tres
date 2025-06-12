@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="GraphData" load_steps=3 format=3 uid="uid://dewv42cowb2lo"]
+
+[ext_resource type="Resource" uid="uid://bvnhfbtmu74lj" path="res://characters/interviewer.tres" id="1_5emjh"]
+[ext_resource type="Script" uid="uid://wvsh7vndbr7" path="res://addons/dialogue_viewer/graph/graph_data.gd" id="2_l0bec"]
+
+[resource]
+resource_name = "the_end"
+script = ExtResource("2_l0bec")
+nodes = [{
+"character": ExtResource("1_5emjh"),
+"node_name": &"Character Node",
+"offset": Vector2(1240, -300),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(960, -260),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": ""
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(1660, -280),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "There you go I hope you enjoy your day!"
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(1960, -260),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}]
+edges = Array[Dictionary]([{
+"from_node": &"Start Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Character Node",
+"to_port": 0
+}, {
+"from_node": &"Character Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node",
+"to_port": 0
+}])
+readable = {
+&"Character Node": {
+"character": ExtResource("1_5emjh"),
+"to_node": {
+0: &"Text Node"
+}
+},
+&"End Node": "end",
+&"Start Node": {
+"node": "start",
+"text": {
+0: ""
+},
+"to_node": {
+0: &"Character Node"
+}
+},
+&"Text Node": {
+"text": {
+0: "There you go I hope you enjoy your day!"
+},
+"to_node": {
+0: &"End Node"
+}
+},
+"startNodeName": &"Start Node"
+}

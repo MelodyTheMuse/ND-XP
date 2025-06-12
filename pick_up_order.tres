@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="GraphData" load_steps=3 format=3 uid="uid://e76vi66p72yd"]
+
+[ext_resource type="Resource" uid="uid://bvnhfbtmu74lj" path="res://characters/interviewer.tres" id="1_h1hjx"]
+[ext_resource type="Script" uid="uid://wvsh7vndbr7" path="res://addons/dialogue_viewer/graph/graph_data.gd" id="2_encrs"]
+
+[resource]
+resource_name = "pick_up_order"
+script = ExtResource("2_encrs")
+nodes = [{
+"node": "start",
+"node_name": &"Start Node",
+"offset": Vector2(91.0272, -118.735),
+"scene_path": "res://addons/dialogue_viewer/start end/Start Node.tscn",
+"text": ""
+}, {
+"character": ExtResource("1_h1hjx"),
+"node_name": &"Character Node",
+"offset": Vector2(720, -160),
+"scene_path": "res://addons/dialogue_viewer/character/Character Node.tscn"
+}, {
+"node_name": &"Text Node",
+"offset": Vector2(1180, -140),
+"scene_path": "res://addons/dialogue_viewer/text/Text Node.tscn",
+"text": "Please come pick up your order!"
+}, {
+"node": "end",
+"node_name": &"End Node",
+"offset": Vector2(1480, -80),
+"scene_path": "res://addons/dialogue_viewer/start end/End Node.tscn"
+}]
+edges = Array[Dictionary]([{
+"from_node": &"Start Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Character Node",
+"to_port": 0
+}, {
+"from_node": &"Character Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Text Node",
+"to_port": 0
+}, {
+"from_node": &"Text Node",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"End Node",
+"to_port": 0
+}])
+readable = {
+&"Character Node": {
+"character": ExtResource("1_h1hjx"),
+"to_node": {
+0: &"Text Node"
+}
+},
+&"End Node": "end",
+&"Start Node": {
+"node": "start",
+"text": {
+0: ""
+},
+"to_node": {
+0: &"Character Node"
+}
+},
+&"Text Node": {
+"text": {
+0: "Please come pick up your order!"
+},
+"to_node": {
+0: &"End Node"
+}
+},
+"startNodeName": &"Start Node"
+}

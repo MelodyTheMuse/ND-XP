@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuxh7xbl8to7p"]
+
+[ext_resource type="Script" uid="uid://c4e6qxe3kxm2" path="res://addons/dialogue_viewer/dialogue_reader.gd" id="1_ydqma"]
+[ext_resource type="Resource" uid="uid://e76vi66p72yd" path="res://pick_up_order.tres" id="2_ydqma"]
+
+[node name="DialogueReader" type="Node"]
+script = ExtResource("1_ydqma")
+dialogue = ExtResource("2_ydqma")
